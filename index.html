@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="Shortcut Icon" href="./static/favicon.png" type="image/x-icon">
+    <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
+    <title>vue-pwa</title>
+    <style>
+      #unsubscribe{
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        display: block;
+        width: 16px;
+        height: 16px;
+        background: url(./static/unsubscribe.png) no-repeat;
+        background-size: 100% 100%;
+        font-size: 0;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <button id="unsubscribe">unsubscribe</button>
+    <noscript>
+      <h1>Hello,here is a pwa project!</h1>
+    </noscript>
+
+    <!-- Service Worker register -->
+    <!-- without webpush -->
+    <!-- <script src="<%= htmlWebpackPlugin.files.publicPath %>register.simple.js"></script> -->
+    <!-- with webpush -->
+    <script src="<%= htmlWebpackPlugin.files.publicPath %>register.js"></script>
+
+    <script src="//cdn.bootcss.com/eruda/1.4.2/eruda.min.js"></script>
+    <script>eruda.init();</script>
+  </body>
+</html>
