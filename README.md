@@ -97,6 +97,8 @@ self.addEventListener('some event', e => {
 4. 网站正在使用通过 HTTPS（或localhost） 运行的 Service Worker，既sw处于activated状态
 5. 用户需要至少浏览网站两次，并且两次访问间隔在五分钟之上
 
+![添加到主屏幕](https://user-gold-cdn.xitu.io/2018/3/12/16218297564a044a?w=586&h=253&f=png&s=76682)
+
 ```json
 {
   "name": "PWA Lite",
@@ -150,6 +152,9 @@ self.addEventListener('fetch', e => {
   )
 })
 ```
+
+![离线浏览](https://user-gold-cdn.xitu.io/2018/3/12/162182ab8a3cddb2?w=592&h=251&f=png&s=56299)
+
 在chrome开发者工具中：
 1. Application/Cache/Cache Storage 查看缓存列表
 2. 如果sw拦截成功，在Network中size列可以看到(from ServiceWorker)字样
@@ -160,6 +165,8 @@ self.addEventListener('fetch', e => {
 2. **from disk cache**    硬盘，长期缓存在硬盘中，如静态资源，不可控
 3. **from ServiceWorker** sw代理，完全可控
 
+![浏览器缓存模式](https://user-gold-cdn.xitu.io/2018/3/12/162182b497b534ca?w=752&h=144&f=png&s=46193)
+
 ### 消息推送
 ![notification](https://raw.githubusercontent.com/SangKa/PWA-Book-CN/master/assets/figure6.4.png "notification")
 
@@ -168,6 +175,9 @@ self.addEventListener('fetch', e => {
 2. 用户允许通知
 3. 询问用户是否允许的对话框只会显示一次，可以在chrome地址栏点击i图标，将“通知”项改为“使用全局默认设置（询问）”即可发起询问对话框
 4. 用户允许后会得到订阅对象，其中endpoint指向谷歌的推送服务器，因此接收时需要全局翻墙
+
+![消息推送](https://user-gold-cdn.xitu.io/2018/3/12/162182bca562924b?w=513&h=263&f=png&s=51909)
+
 ```js
 // 服务器推送事件
 self.addEventListener('push', e => {
